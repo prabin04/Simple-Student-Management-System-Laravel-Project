@@ -16,7 +16,7 @@
 <h1>Create Page</h1>
 
 <!-- Default form register -->
-<form class="text-center border border-light p-5" action="{{ route('store')}}" method="POST">
+<form class="text-center border border-light p-5" action="{{ route('update', $student ->id)}}" method="POST">
 
     {{ csrf_field() }}
 
@@ -25,20 +25,20 @@
     <div class="form-row mb-4">
         <div class="col">
             <!-- First name -->
-            <input type="text" id="defaultRegisterFormFirstName" name="firstname" class="form-control" placeholder="First name">
+        <input type="text" id="defaultRegisterFormFirstName" name="firstname" class="form-control" value="{{ $student->first_name }}" placeholder="First name">
         </div>
         <div class="col">
             <!-- Last name -->
-            <input type="text" id="defaultRegisterFormLastName" name="lastname" class="form-control" placeholder="Last name">
+            <input type="text" id="defaultRegisterFormLastName" name="lastname" value="{{ $student->last_name }}" class="form-control" placeholder="Last name">
         </div>
     </div>
 
     <!-- E-mail -->
-    <input type="email" id="defaultRegisterFormEmail" name="email" class="form-control mb-4" placeholder="E-mail">
+    <input type="email" id="defaultRegisterFormEmail" name="email" value="{{ $student->email }}" class="form-control mb-4" placeholder="E-mail">
 
 
     <!-- Phone number -->
-    <input type="text" id="defaultRegisterPhonePassword" name="phone" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+    <input type="text" id="defaultRegisterPhonePassword" name="phone" value="{{ $student->phone }}" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
 
 
     <!-- Sign up button -->
